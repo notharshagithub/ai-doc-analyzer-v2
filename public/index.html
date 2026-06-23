@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotebookLM RAG | Quantum Retrieval Console</title>
+    <meta
+        name="description"
+        content="Futuristic NotebookLM-style RAG console for uploading documents, indexing them with vectors, and chatting with grounded answers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="landingView" class="landing-shell">
+        <section class="hero" id="top">
+            <div class="topbar">
+                <a href="#top" class="brand">
+                    <span class="brand-mark"></span>
+                    <span class="brand-copy">
+                        <strong>NOTEBOOKLM RAG</strong>
+                        <span>Quantum retrieval console</span>
+                    </span>
+                </a>
+                <div class="nav-actions">
+                    <a href="#features" class="ghost-button">Feature Grid</a>
+                    <button class="cta-button" data-open-app>Launch Console</button>
+                </div>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="eyebrow">Neural Indexing Sequence Online</div>
+                    <h1>
+                        Ask files
+                        <span>Like a machine from 2036</span>
+                    </h1>
+                    <p>
+                        Upload PDFs and text files, map them into vector space, and interrogate them through a grounded
+                        RAG pipeline with a deliberately overbuilt sci-fi interface.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="cta-button" data-open-app>Enter Workspace</button>
+                        <a href="#architecture" class="ghost-button">Inspect Architecture</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-label">Provider</div>
+                            <div class="stat-value" id="landingProvider">OpenRouter</div>
+                            <div class="stat-note">Live model gateway</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Indexed Docs</div>
+                            <div class="stat-value" id="landingDocuments">0</div>
+                            <div class="stat-note">Document memory online</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Vector Chunks</div>
+                            <div class="stat-value" id="landingChunks">0</div>
+                            <div class="stat-note">Searchable semantic blocks</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="interface-panel">
+                        <div class="panel-topline">
+                            <span>Signal Deck</span>
+                            <span class="pulse">Active</span>
+                        </div>
+
+                        <div class="command-window">
+                            <div class="signal-panel">
+                                <div class="signal-title">Context Relay</div>
+                                <div class="signal-body">
+                                    Ingest. Chunk. Embed. Retrieve. Generate only from evidence. Keep the answer anchored.
+                                </div>
+                            </div>
+
+                            <div class="signal-panel">
+                                <div class="signal-title">Waveform</div>
+                                <div class="wave-grid" aria-hidden="true">
+                                    <span style="height: 42%"></span>
+                                    <span style="height: 88%"></span>
+                                    <span style="height: 64%"></span>
+                                    <span style="height: 98%"></span>
+                                    <span style="height: 54%"></span>
+                                    <span style="height: 84%"></span>
+                                    <span style="height: 72%"></span>
+                                    <span style="height: 36%"></span>
+                                    <span style="height: 94%"></span>
+                                    <span style="height: 58%"></span>
+                                    <span style="height: 76%"></span>
+                                    <span style="height: 46%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hud-card hud-a">
+                        <div class="hud-label">Answer Mode</div>
+                        <div class="hud-value">Grounded</div>
+                        <div class="hud-meta">No freeform drift</div>
+                    </div>
+
+                    <div class="hud-card hud-b">
+                        <div class="hud-label">Search State</div>
+                        <div class="hud-value">Scoped</div>
+                        <div class="hud-meta">Single-doc targeting available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <span class="section-label">Feature Grid</span>
+            <div class="section-head">
+                <h2>Sharper backend behavior plus a much stronger UI shell.</h2>
+                <p>
+                    The app now tracks real document identities, scopes chats to one document when needed, exposes
+                    document management endpoints, and wraps the whole flow in a denser, more usable interface.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-index">01</div>
+                    <strong>Multi-Document Control</strong>
+                    <p>See indexed documents, switch the active target, and delete one file or clear the entire collection.</p>
+                    <div class="feature-bar"><span style="width: 92%"></span></div>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-index">02</div>
+                    <strong>Scoped Retrieval</strong>
+                    <p>Queries can lock to a selected document instead of mixing chunks from unrelated uploads.</p>
+                    <div class="feature-bar"><span style="width: 89%"></span></div>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-index">03</div>
+                    <strong>Ops Telemetry</strong>
+                    <p>Health, provider, document count, and chunk totals are surfaced directly in the interface.</p>
+                    <div class="feature-bar"><span style="width: 87%"></span></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="architecture" class="section">
+            <span class="section-label">Architecture</span>
+            <div class="scan-layout">
+                <div class="scan-board">
+                    <div class="board-grid">
+                        <div class="board-cell">
+                            <strong>INGEST</strong>
+                            <p>PDF and TXT payloads move through extraction and normalized chunk creation.</p>
+                        </div>
+                        <div class="board-cell">
+                            <strong>INDEX</strong>
+                            <ul>
+                                <li>Original filename preserved</li>
+                                <li>Document ID assigned</li>
+                                <li>Vectors stored with metadata</li>
+                            </ul>
+                        </div>
+                        <div class="board-cell">
+                            <strong>RETRIEVE</strong>
+                            <p>Semantic search can target the whole corpus or a selected document channel.</p>
+                        </div>
+                        <div class="board-cell">
+                            <strong>RESPOND</strong>
+                            <p>Answers return confidence and source previews rather than opaque model text.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scan-side">
+                    <div class="beam-card">
+                        <strong>VECTOR PRESSURE</strong>
+                        <p>Embeddings route into Qdrant with the metadata needed for document management and cleaner answers.</p>
+                        <div class="beam-meter" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="beam-card">
+                        <strong>WORKSPACE</strong>
+                        <p>Launch into the live console when you want utility. Stay here when you want the dramatic version of the product story.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="launch-panel">
+            <h3>Enter the workspace and run the real document console.</h3>
+            <p>
+                Upload, index, ask, inspect sources, copy answers, switch active documents, and wipe the collection if you need a clean slate.
+            </p>
+            <div class="launch-actions">
+                <button class="cta-button" data-open-app>Launch Console</button>
+                <a href="#top" class="ghost-button">Back To Top</a>
+            </div>
+        </section>
+    </div>
+
+    <div id="appView" class="app-shell hidden">
+        <button id="backHomeButton" class="app-back" type="button">Back To Home</button>
+
+        <div class="workspace-shell">
+            <aside class="workspace-sidebar">
+                <div class="workspace-brand">
+                    <div class="workspace-brand-mark"></div>
+                    <div>
+                        <strong>RAG CONSOLE</strong>
+                        <span>Live document deck</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <div class="card-label">Upload Document</div>
+                    <p class="card-subtext">Large multi-page files are supported up to the live processing limit. Split very large PDFs if indexing is rejected.</p>
+                    <div class="upload-zone" id="uploadArea">
+                        <input type="file" id="fileInput" accept=".pdf,.txt">
+                        <div class="upload-icon">⬡</div>
+                        <strong>Drop a file or click to upload</strong>
+                        <p>PDF or TXT up to 10MB</p>
+                    </div>
+                    <div class="upload-status" id="uploadStatus"></div>
+                </div>
+
+                <div class="sidebar-card">
+                    <div class="card-head">
+                        <div class="card-label">Mission Status</div>
+                        <button class="tiny-button" id="refreshStatusButton" type="button">Refresh</button>
+                    </div>
+                    <div class="telemetry-grid">
+                        <div class="telemetry-tile">
+                            <span>Provider</span>
+                            <strong id="statusProvider">-</strong>
+                        </div>
+                        <div class="telemetry-tile">
+                            <span>Documents</span>
+                            <strong id="statusDocuments">0</strong>
+                        </div>
+                        <div class="telemetry-tile">
+                            <span>Chunks</span>
+                            <strong id="statusChunks">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <div class="card-head">
+                        <div class="card-label">Document Library</div>
+                        <div class="card-actions">
+                            <button class="tiny-button" id="refreshDocsButton" type="button">Refresh</button>
+                            <button class="tiny-button danger" id="clearDocsButton" type="button">Clear All</button>
+                        </div>
+                    </div>
+                    <div class="document-list" id="documentList"></div>
+                </div>
+            </aside>
+
+            <main class="workspace-main">
+                <section class="workspace-hero">
+                    <div>
+                        <div class="workspace-kicker">Quantum Retrieval Workspace</div>
+                        <h2>Interrogate your indexed documents with grounded answers.</h2>
+                        <p>Choose an active document or query across the full indexed set.</p>
+                    </div>
+                    <div class="active-doc-panel">
+                        <span>Active Scope</span>
+                        <strong id="activeDocumentLabel">All indexed documents</strong>
+                    </div>
+                </section>
+
+                <section class="quick-prompts-card">
+                    <div class="card-head">
+                        <div class="card-label">Quick Prompts</div>
+                    </div>
+                    <div class="prompt-grid" id="promptGrid"></div>
+                </section>
+
+                <section class="chat-shell">
+                    <div class="messages" id="messages">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">◈</div>
+                            <p>Upload a document and start the interrogation.</p>
+                        </div>
+                    </div>
+
+                    <div class="composer-shell">
+                        <textarea
+                            id="queryInput"
+                            rows="3"
+                            placeholder="Ask a question about the active document scope..."
+                        ></textarea>
+                        <div class="composer-actions">
+                            <div class="composer-meta" id="composerMeta">No document selected. Queries can still run across all indexed documents.</div>
+                            <div class="composer-buttons">
+                                <button id="clearChatButton" class="ghost-button alt" type="button">Clear Chat</button>
+                                <button id="sendButton" class="cta-button workspace-cta" type="button">Send Query</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="/client.js"></script>
+</body>
+</html>
